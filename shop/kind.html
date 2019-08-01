@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>局部组件</title>
+</head>
+<body>
+    <div id="wy">
+
+      <input type="text" v-model="oka" >
+        <button >确认</button>
+      </input>
+    <p>{{oka}}</p>	
+    </div>
+	<script type="text/javascript" src="vue.js"> </script>
+	<script type="text/javascript">
+	  //组件模板
+	  var firstTemp={template:'<h1>ashdkjasdk</h1>'};
+      var secondTemp={template:'<h1>ashdkjasdk</h1>'};
+	  var wy=new Vue({
+	  	 //注册的组件必须使用
+         el:"#wy",
+         //注册组件
+         data:{
+
+           oka:""
+         },
+         components:{
+              'myfirst':firstTemp,
+              'mysecond':secondTemp
+         }
+	  })	
+	</script>
+</body>
+</html>
