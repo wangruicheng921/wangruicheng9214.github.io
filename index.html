@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件</title>
+</head>
+<body>
+    <div id="bk">
+    	<post-bk v-for="post in posts" v-bind:post="post"></post-bk>
+    	<alert-box></alert-box>
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+    Vue.component('post-bk',{
+      props:['post'],template:'<p>{{post.id}}{{post.name}}</p> ' 
+    });
+    Vue.component('alert-box', {
+	  template: '<div class="demo-alert-box"> <strong>Error!</strong> <slot></slot> </div>'
+    });
+    var bk=new Vue({
+       el:"#bk",
+       data:{
+          posts:[{id:1,name:"海南"},{id:2,name:"天空"},{id:3,name:"一切"}]
+       }
+	})	
+	</script>
+</body>
+</html>
