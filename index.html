@@ -4,19 +4,45 @@
 	<meta charset="UTF-8">
    <title>cc921</title>
    <style type="text/css">
-      body {  background: url(img/lal.jfif) no-repeat fixed center;  }
-      div#bk { margin-left: 100px  ; margin-top:100px       }
-      div#wrc {margin-left: 1400px  ; margin-top:0px }
+      body {  background: url(img/1.jpg) no-repeat fixed center;  }
+      div#bk { margin-left: 50px  ; margin-top:150px  ;color: slateblue     }
+      div#wrc {margin-left: 350px  ; margin-top:75px }
+      div#other{margin-left: 25%  ; margin-top:48%}
    </style>
+   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+ 
 </head>
 <body>
-   <div id="bk" >
-    	<post-bk v-for="post in posts" v-bind:post="post"></post-bk> 
+   <div id="wy">
+      <el-container>
+               <el-aside width="400px">
+                     <div id="bk" >
+                        <post-bk v-for="post in posts" v-bind:post="post"></post-bk>        
+                     </div>
+               </el-aside>
+               <el-main>
+                     <el-main>
+                     <div id="wrc">
+                        <i class="el-icon-guide"></i>  
+                        <el-link type="warning" href="book.html">.Net Core、Abp、Vue学习文章</el-link>
+                        <br />
+                        <i class="el-icon-guide"></i>  
+                        <el-link type="warning" href="biji.html">WRC的学习笔记</el-link>
+                     </div>
+                     </el-main>
+                     <el-footer>
+                           <div id="other">
+                               <i class="el-icon-user"></i>
+                               <el-link type="warning" disabled="false">@wrc @1367980205 @2019</el-link>
+                           </div>
+                     </el-footer>
+               </el-main>
+               
+      </el-container>
+
    </div>
-   <div id="wrc">
-      <a href="book.html">.Net Core、Abp、Vue学习文章</a>
-   </div>
-	<script type="text/javascript" src="vue.js"></script>
+   <script type="text/javascript" src="vue.js"></script>
+   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
    <script type="text/javascript">
     Vue.component('post-bk',{
       props:['post'],template:'<p>{{post.name}}</p> ' 
@@ -29,7 +55,23 @@
           {id:3,name:"哀吾生之须臾，羡长江之无穷。"},
           {id:4,name:"挟飞仙以遨游，抱明月而长终。"}]
        }
-	})	
+     });
+   var wrc=new Vue(
+         {
+            el:"#wrc"
+         }
+   );
+   var wy=new Vue(
+         {
+            el:"#wy"
+         }
+   );
+   var other=new Vue(
+         {
+            el:"#other"
+         }
+   )
+   
    </script>  
 </body>
 </html>

@@ -2,21 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-   <title>core</title>
+   <title>资料连接</title>
    <style type="text/css">
       body { background: url(img/obb.jpg) no-repeat fixed center;  }
-      div#bka { margin-left: 100px  ; margin-top:100px       }
+      div#bka { margin-left: 300px  ; margin-top:100px       }
    </style>
+   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 </head>
 <body>
    <div id="bka" >
          <dl>
-               <dt>ABP</dt>
-               <dd><a href="https://aspnetboilerplate.com/">国外官方网站</a></dd>
-               <dd><a href="https://cn.abp.io/">国内社区网站</a></dd>
-               <dt>VUE</dt>
-               <dd><a href="https://cn.abp.io/">VUE官方网站</a></dd>
+            <dt style="color:rgb(39, 24, 5)">ABP</dt>
+               <dd><el-link style="color: rgb(red, green, blue)" :href="abp">国外官方网站</el-link></dd>
+               <dd><el-link  :href="abpe">国内社区网站</el-link></dd>
+               <dd><el-link  :href="lz">老张的哲学</el-link></dd>
+            <dt style="color:rgb(39, 24, 5)">VUE</dt>
+               <dd><el-link  :href="vue">VUE官方网站</el-link></dd>
+               <dd><el-link  :href="elm">elment-UI快速视图</el-link></dd>
+               <dd><el-link  :href="es6">es6菜鸟教程</el-link></dd>
+               <dd><el-link  :href="zxsVue">赵先生VUE项目实战</el-link></dd>
+               <dd><el-link  :href="vuems">VUE面试</el-link></dd>
+               <dd><el-link  :href="json">Json属性过滤</el-link></dd>
+            <dt style="color:rgb(39, 24, 5)">EFCore</dt>
+               <dd><el-link  :href="ef">ef数据库操作基础</el-link></dd>
+               <dd><el-link  :href="wrlq">微软官方Linq</el-link></dd>
+               <dd><el-link  :href="ldb">C# Lambda表达式</el-link></dd>
+               <dd><el-link  :href="efcdf">EF配置一对多，多对多关系</el-link></dd>
+               <dd><el-link  :href="efdbs">EF多表查询</el-link></dd>       
          </dl>
-   </div>	
+   </div>
+   <script type="text/javascript" src="vue.js"></script>
+   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+   <script>
+        var bka =new Vue({
+               el:"#bka",
+               data:{
+                  abp:'https://aspnetboilerplate.com/',
+                  abpe:'https://cn.abp.io/',
+                  vue:'https://cn.vuejs.org',
+                  es6:'https://www.runoob.com/w3cnote/es6-tutorial.html',
+                  elm:'https://element.eleme.cn/#/zh-CN',
+                  zxsVue:'https://www.cnblogs.com/zhaoyongblog/',
+                  vuems:'https://www.vue-js.com/topic/5d1585302c5659594cb9d5d7',
+                  json:'https://www.jianshu.com/p/54ba009064b0',
+                  lz:'https://www.cnblogs.com/laozhang-is-phi/',
+                  ef:'https://www.cnblogs.com/CreateMyself/',
+                  wrlq:'https://docs.microsoft.com/zh-cn/dotnet/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities',
+                  ldb:'https://blog.csdn.net/qq_36456952/article/details/64126983',
+                  efcdf:'http://www.vnfan.com/wower/d/e14902c300b07f0.html',
+                  efdbs:'https://blog.csdn.net/CAPF_sky/article/details/81263521'     
+               }
+
+        })
+   </script>	
 </body>
 </html>
