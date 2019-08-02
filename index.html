@@ -2,27 +2,34 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>组件</title>
+   <title>cc921</title>
+   <style type="text/css">
+      body {  background: url(img/lal.jfif) no-repeat fixed center;  }
+      div#bk { margin-left: 100px  ; margin-top:100px       }
+      div#wrc {margin-left: 1400px  ; margin-top:0px }
+   </style>
 </head>
 <body>
-    <div id="bk">
-    	<post-bk v-for="post in posts" v-bind:post="post"></post-bk>
-    	<alert-box></alert-box>
-	</div>
+   <div id="bk" >
+    	<post-bk v-for="post in posts" v-bind:post="post"></post-bk> 
+   </div>
+   <div id="wrc">
+      <a href="book.html">.Net Core、Abp、Vue学习文章</a>
+   </div>
 	<script type="text/javascript" src="vue.js"></script>
-	<script type="text/javascript">
+   <script type="text/javascript">
     Vue.component('post-bk',{
-      props:['post'],template:'<p>{{post.id}}{{post.name}}</p> ' 
-    });
-    Vue.component('alert-box', {
-	  template: '<div class="demo-alert-box"> <strong>Error!</strong> <slot></slot> </div>'
+      props:['post'],template:'<p>{{post.name}}</p> ' 
     });
     var bk=new Vue({
        el:"#bk",
        data:{
-          posts:[{id:1,name:"海南"},{id:2,name:"天空"},{id:3,name:"一切"}]
+          posts:[{id:1,name:"驾一叶之扁舟，举匏樽以相属。"},
+          {id:2,name:"寄蜉蝣于天地，渺沧海之一粟。"},
+          {id:3,name:"哀吾生之须臾，羡长江之无穷。"},
+          {id:4,name:"挟飞仙以遨游，抱明月而长终。"}]
        }
 	})	
-	</script>
+   </script>  
 </body>
 </html>
